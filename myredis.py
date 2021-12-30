@@ -24,6 +24,26 @@ def hello_redis():
     except Exception as e:
         print(e)
 
+def increment_number():
+    
+    r=redis.StrictRedis(host="redis-16409.c262.us-east-1-3.ec2.cloud.redislabs.com", port=16409, password="TJzXuSqzKniqrVTiByQk5egJWzXiYyji", decode_responses=True)
+    
+    r.set("value",1)
+    
+    r.incr("value")
+    
+    msg=r.get("value")
+    
+    print(msg)
+    
+    
+    
+    
+    
+    
+    
+
 
 if __name__ == '__main__':
     hello_redis()
+    increment_number()
